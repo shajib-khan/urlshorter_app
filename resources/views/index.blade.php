@@ -13,6 +13,9 @@
   <body>
    <div class="container">
     <h4>Shorten Your URL</h4>
+    @if(session('original_url'))
+        <p>Short URL: <a href="{{ session('original_url') }}" target="_blank">{{ session('original_url') }}</a></p>
+    @endif
     <form action="{{ route('store.url') }}" method="POST">
         @csrf
         <input type="url" name="original_url" placeholder="Enter your long URL" required>

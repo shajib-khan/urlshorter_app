@@ -10,19 +10,20 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('url_clicks', function (Blueprint $table) {
-            $table->id();
+{
+    Schema::create('url_clicks', function (Blueprint $table) {
+        $table->id();
 
-            $table->unsignedBigInteger('short_url_id');
-            $table->string('ip_address');
-            $table->string('user_agent');
-            $table->string('clicked_at');
+        $table->unsignedBigInteger('short_url_id');
+        $table->string('ip_address');
+        $table->string('user_agent');
+        $table->string('clicked_at');
 
-            $table->foreign('short_url_id')->references('id')->on('short_urls')->onDelete('cascade');
-            $table->timestamps();
-        });
-    }
+        
+
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.

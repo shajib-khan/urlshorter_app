@@ -21,5 +21,6 @@ Route::middleware('auth')->group(function () {
 //custom url
 Route::get('/url',[UrlController::class,'index'])->name('home.view');
 Route::post('/store',[UrlController::class,'store'])->name('store.url');
+Route::get('/{code}', [UrlController::class, 'redirect']);
 
 require __DIR__.'/auth.php';
